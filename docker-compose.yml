@@ -1,0 +1,20 @@
+version: '3'
+services:
+  premade-estimator:
+    container_name: premade-estimator
+    build: .
+    command: python /code/premade_estimator.py
+    volumes:
+    - .:/code
+  estimator-test:
+    container_name: estimator-test
+    build: .
+    command: python /code/estimator_test.py
+    volumes:
+    - .:/code
+  custom-estimator:
+    container_name: custom-estimator
+    build: .
+    command: python /code/custom_estimator.py
+    volumes:
+    - .:/code
